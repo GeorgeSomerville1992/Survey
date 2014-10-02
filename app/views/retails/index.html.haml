@@ -1,0 +1,138 @@
+.inner
+  .row
+    .large-12columns
+      .mainContainer
+        %header
+          %h1 Pitch Us your idea
+          %p This goes straight to the landlord to give it your best
+    .content-container    
+      .row        
+        #introduction 
+          %h3 What will you use this space for?
+          .large-6.columns
+            .boxcontainer#showRetail 
+              %br/
+              %i.fa.fa-home.fa-3x
+              %br/
+              %a Retail
+          .large-6.columns
+            .boxcontainer#showEvents
+              %br/
+              %i.fa.fa-ticket.fa-3x
+              %br/
+              %a Events      
+
+                
+      .row
+        .large-12.columns
+          #main-content    
+            #new_retail{:style => "display: none"}
+              = form_tag "", id: "retail_form" do |f|
+                .field
+                  %h3 What would you call your store? 
+                  %p#greytext Give your idea a name to save it, you can always change this later
+                  %br/
+                  = text_field_tag :retailStore
+                  %br/
+                  %br/
+                .field
+                  %h3 Describe your brand
+                  %br/
+                  
+                  = text_field_tag :retailBrand
+                .field
+                  %h3 How will the space look?
+                  .large-4.columns.apperanceContainer
+                    %img#appearOne{:src => "/assets/clear.png"}/
+                    .apperanceDescriptionContainer
+                      %p WhiteBox
+                      = radio_button_tag :rentailAppearance , 'emptyyyy'
+                  .large-4.columns.apperanceContainer
+                    %img#appearTwo{:src => "/assets/light.png", style: "width:250px; height:200px"}/
+                    .apperanceDescriptionContainer
+                      %p Lightly Decorated
+                      = radio_button_tag :rentailAppearance , 'half'
+                  .large-4.columns.apperanceContainer 
+                    %img#appearThree{:src => "/assets/heavy.png", style: "width:250px; height:200px"}/
+                    .apperanceDescriptionContainer
+                      %p Heavily Decorated
+                      = radio_button_tag :rentailAppearance , 'full'
+                  / = text_field_tag :rentailAppearance
+                  %br/ 
+                  %br/
+                  %br/
+                .field
+                  %h3 What would you sell? 
+                  %p#greytext Submit links to your products or services online
+                  %br/
+                  = text_field_tag :retailSell
+                .retailactions
+                  = submit_tag
+            #new_event{:style => "display: none"}
+              = form_tag "", id: "event_form" do |f|
+                .field
+                  %h3 What will you call your event?
+                  %p#greytext Give your idea a name to save it, you can always change this later
+                  = text_field_tag :eventName
+                .field
+                  %h3 Event Plan
+                  %p#greytext Tell us about what will happen in this event
+                  = text_area_tag :eventPlan
+                .field
+                  %h3 What will the event look like?
+                  .large-4.columns.apperanceContainer
+                    %img#appearEventOne{:src => "/assets/clear.png"}/
+                    .apperanceDescriptionContainer
+                      %p WhiteBox
+                      = radio_button_tag :eventAppearance , 'empty'
+                  .large-4.columns.apperanceContainer
+                    %img#appearEventTwo{:src => "/assets/light.png"}/
+                    .apperanceDescriptionContainer
+                      %p Lightly Decorated
+                      = radio_button_tag :eventAppearance , 'half'
+                  .large-4.columns.apperanceContainer 
+                    %img#appearEventThree{:src => "/assets/heavy.png"}/
+                    .apperanceDescriptionContainer
+                      %p Heavily Decorated
+                      = radio_button_tag :eventAppearance , 'full'
+                .field
+                  %h3 Will you be serving Alcohol?
+                  = check_box_tag :eventAlcohol
+                .actions
+                  = submit_tag
+
+
+          #all_retails{:style => "display: none"}     
+            %table
+              %thead
+                %tr
+                  %th Retailstore
+                  %th Retailbrand
+                  %th Retailapperance
+                  %th RetailSell
+                  / %th Retailsell
+                  / %th Eventspace
+                  / %th Eventstore
+                  / %th Eventbrand
+                  / %th Eventapperance
+                  / %th Eventalcohol
+                  / %th{:colspan => "3"}
+              %tbody 
+          #all_events{:style => "display: none"} 
+            %table
+              %thead
+                %tr
+                  %th EventName
+                  %th EventPlan
+                  %th EventApperance
+                  %th EventAlchol
+                  / %th Retailsell
+                  / %th Eventspace
+                  / %th Eventstore
+                  / %th Eventbrand
+                  / %th Eventapperance
+                  / %th Eventalcohol
+                  / %th{:colspan => "3"}
+              %tbody                
+
+= link_to 'New Retail', new_retail_path

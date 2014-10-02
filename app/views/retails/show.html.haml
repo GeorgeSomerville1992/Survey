@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Retailname:
+  = @retail.retailName
+%p
+  %b Retailbrand:
+  = @retail.retailBrand
+%p
+  %b Rentailappearance:
+  = @retail.rentailAppearance
+%p
+  %b Retailsell:
+  = @retail.retailSell
+
+= link_to 'Edit', edit_retail_path(@retail)
+\|
+= link_to 'Back', retails_path

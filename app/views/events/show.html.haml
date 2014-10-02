@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Eventname:
+  = @event.eventName
+%p
+  %b Eventplan:
+  = @event.eventPlan
+%p
+  %b Eventappearance:
+  = @event.eventAppearance
+%p
+  %b Eventalcohol:
+  = @event.eventAlcohol
+
+= link_to 'Edit', edit_event_path(@event)
+\|
+= link_to 'Back', events_path

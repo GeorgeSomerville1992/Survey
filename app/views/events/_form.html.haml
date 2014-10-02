@@ -1,0 +1,22 @@
+= form_for @event do |f|
+  - if @event.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
+      %ul
+        - @event.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :eventName
+    = f.text_field :eventName
+  .field
+    = f.label :eventPlan
+    = f.text_area :eventPlan
+  .field
+    = f.label :eventAppearance
+    = f.check_box :eventAppearance
+  .field
+    = f.label :eventAlcohol
+    = f.check_box :eventAlcohol
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  retailName: MyString
+  retailBrand: MyString
+  rentailAppearance: MyString
+  retailSell: MyString
+
+two:
+  retailName: MyString
+  retailBrand: MyString
+  rentailAppearance: MyString
+  retailSell: MyString

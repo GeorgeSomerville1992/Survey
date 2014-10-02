@@ -1,0 +1,22 @@
+= form_for @retail do |f|
+  - if @retail.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@retail.errors.count, "error")} prohibited this retail from being saved:"
+      %ul
+        - @retail.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :retailName
+    = f.text_field :retailName
+  .field
+    = f.label :retailBrand
+    = f.text_field :retailBrand
+  .field
+    = f.label :rentailAppearance
+    = f.text_field :rentailAppearance
+  .field
+    = f.label :retailSell
+    = f.text_field :retailSell
+  .actions
+    = f.submit 'Save'
